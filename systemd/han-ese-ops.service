@@ -1,0 +1,15 @@
+##  Local service for HAN ESE OPS - run scripts at boot and shutdown
+##  Based on https://bbs.archlinux.org/viewtopic.php?pid=1469558#p1469558
+##  MvdS, 2017-09-23
+
+[Unit]
+Description=HAN OPS ESE service at boot/shutdown
+Before=shutdown.target
+
+[Service]
+ExecStart=/usr/bin/han-ese-ops_run-at-boot.sh &
+ExecStop=/usr/bin/han-ese-ops_run-at-shutdown.py &
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
