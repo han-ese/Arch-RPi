@@ -8,7 +8,7 @@ Before=shutdown.target
 
 [Service]
 ExecStart=/usr/bin/han-ese-ops_run-at-boot.sh &
-ExecStop=/usr/bin/han-ese-ops_run-at-shutdown.py &
+ExecStop=/usr/bin/han-ese-ops_run-at-shutdown.sh &
 RemainAfterExit=yes
 
 [Install]
